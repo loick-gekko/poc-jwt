@@ -12,13 +12,8 @@ const jwtKey = 'Xz05Z1JmP2'
     payload = jwt.verify(token, jwtKey)
   } catch (e) {
     if (e instanceof jwt.JsonWebTokenError) {
-      // if the error thrown is because the JWT is unauthorized, return a 401 error
       console.log( e)
     }
-    // otherwise, return a bad request error
     console.log( e)
   }
-
-  // Finally, return the welcome message to the user, along with their
-  // username given in the token
-  console.log(`Bonjour ${payload.sub}!`)
+console.log(`Bonjour ${payload.sub}!`)
